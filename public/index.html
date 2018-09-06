@@ -1,0 +1,117 @@
+<html>
+<head>
+    <script type="text/javascript" src="lib/three.min.js"></script>
+    <script type="text/javascript" src="lib/OrbitControls.js"></script>
+</head>
+<body>
+<div id="input">
+    <form id="form">
+        <h2>Solar System Orbit Simulation</h2>
+
+
+        <select id="preload">
+            <option disabled selected>Choose a solar system</option>
+            <option value="home">Our solar system</option>
+            <option value="jupiter">Jupiter at Mars' distance</option>
+            <option value="mercury">Mercury at Mars' distance</option>
+        </select>
+    </form>
+
+    Data:
+    <table cellspacing="0" border="1">
+        <tr>
+            <th></th>
+            <th>Radius (Gm)</th>
+            <th>Mass (kg)</th>
+            <th>Distance (Gm)</th>
+            <th>Speed (Gm/s)</th>
+        </tr>
+        <tr>
+            <td>Sun</td>
+            <td>0.6955</td>
+            <td>1.988435e30</td>
+            <td>--</td>
+            <td>--</td>
+        </tr>
+        <tr>
+            <td>Mercury</td>
+            <td>0.0024397</td>
+            <td>3.30104e23</td>
+            <td>50.32</td>
+            <td>4.74e-5</td>
+        </tr>
+        <tr>
+            <td>Venus</td>
+            <td>0.0060519</td>
+            <td>4.86732e24</td>
+            <td>108.8</td>
+            <td>3.5e-5</td>
+        </tr>
+        <tr>
+            <td>Earth</td>
+            <td>0.0063674447</td>
+            <td>5.9721986e24</td>
+            <td>150</td>
+            <td>2.963e-5</td>
+        </tr>
+        <tr>
+            <td>Mars</td>
+            <td>0.003386</td>
+            <td>6.41693e23</td>
+            <td>227.94</td>
+            <td>0.0000228175</td>
+        </tr>
+        <tr>
+            <td>Jupiter</td>
+            <td>0.069173</td>
+            <td>1.89813e27</td>
+            <td>778.33</td>
+            <td>0.0000129824</td>
+        </tr>
+        <tr>
+            <td>Saturn</td>
+            <td>0.057316</td>
+            <td>5.68319e26</td>
+            <td>1429.4</td>
+            <td>9.280e-6</td>
+        </tr>
+        <tr>
+            <td>Uranus</td>
+            <td>0.025266</td>
+            <td>8.68103e25</td>
+            <td>2870.99</td>
+            <td>6.509e-6</td>
+        </tr>
+        <tr>
+            <td>Neptune</td>
+            <td>0.024553</td>
+            <td>1.0241e26</td>
+            <td>4504</td>
+            <td>5.449e-6</td>
+        </tr>
+    </table>
+</div>
+
+<div id="model" style="display: none;">
+    <div id="canvas" style="position: absolute; left: 0px; top: 0px; z-index: 1;"></div>
+
+    <div id="speed" style="z-index: 1; position: absolute; color: #feffff; font-family: Helvetica, sans-serif;">
+        <label for="speedSlider">Speed</label>
+        <input id="speedSlider" type="range" min="1000" max="50000" value="10000" />
+        <br>
+
+        <a href="#" style="color: #feffff;" id="pauseButton">Pause</a>
+        <br>
+
+        <label for="focus" style="color: #feffff;">Focus:</label>
+        <select id="focus">
+            <option selected value="-1">Sun</option>
+        </select>
+    </div>
+</div>
+</body>
+
+<script src="app/animation.js"></script>
+<script src="app/main.js"></script>
+
+</html>
